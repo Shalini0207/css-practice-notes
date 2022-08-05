@@ -1,0 +1,44 @@
+.header{
+    color: #0000ff;
+    font-size: 15px;
+    /* transition: color 0.3s ease-in-out; */
+    transition-property: color;
+    transition-duration: 1s;
+    transition-delay: 0.5s;
+    transition-timing-function: ease;
+    /* to put all the transition style in one line, we need to write like-
+    transition: transition-property transition-duration transition-timing-function transition-delay
+    transition : color 1s ease 0.5s*/
+}
+.header:hover{
+    color: aqua;
+    font-size: 20px;
+}
+
+.box{
+    width: 50px;
+    height: 50px;
+    background: red;
+    border: 1px solid black;
+    /* animation-name: grow;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-delay: 0.5s; */
+    /* animation-iteration-count: 2; */
+    /* animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: both; */
+    /* this property allows us to stay at the final position */
+    animation: grow 2s ease-in 0.5s infinite alternate both;
+}
+
+@keyframes grow {
+    /* if we have only start and end animation to work, then we can only write-
+    from {width: 50px; height: 50px; background: red;}
+    to {width: 50px; height: 100px; background: green;}
+    from is equivalent to 0% and to is equivalent to 100%, 
+    but if we want to animate property in b/w start and end, then we have to use % instead of from and to */
+    0% {width: 50px; height: 50px; background: red;}
+    50% {width: 100px; height: 50px; background: blue;}
+    100% {width: 50px; height: 100px; background: green;}
+}
